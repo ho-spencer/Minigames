@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<h1 class="title">Rock Paper Scissors</h1>
+
+    <div class="container">
+        <div class="scoreboard">
+            <h2><span id="p1Score">0</span>-<span id="p2Score">0</span></h2>
+            <h2 id="winnerDisplay"></h2>
+            
+            <div class="round-select form-floating offset-3 mb-2">
+                <select class="form-select" name="playTo" id="playTo">
+                    <option value="default">Choose Number of Rounds</option>
+                    <option value="2">3</option>
+                    <option value="3">5</option>
+                    <option value="4">7</option>
+                </select>
+                <label for="playTo">Best of:</label>
+            </div>
+        </div>
+
+        <div class="game col-md-6 offset-md-3 justify-content-evenly">
+            <!-- Player 1 Choices -->
+            <div class="p1choices col-md-3" id="p1">
+                <h3 id="player1Title">Player 1</h3>
+                <div class="choice" id="p1rock">
+                    <img src="/images/RockPaperScissors/rock.png" alt="rock">
+                </div>
+            
+                <div class="choice" id="p1paper">
+                    <img src="/images/RockPaperScissors/paper.png" alt="paper">
+                </div>
+            
+                <div class="choice" id="p1scissors">
+                    <img src="/images/RockPaperScissors/scissors.png" alt="scissors">
+                </div>
+            </div>
+            
+            <!-- Player 2 Choices -->
+            <div class="p2choices col-md-3" id="p2">
+                <h3 id="player2Title">Player 2</h3>
+                <div class="choice" id="p2rock">
+                    <img src="/images/RockPaperScissors/rock.png" alt="rock">
+                </div>
+            
+                <div class="choice" id="p2paper">
+                    <img src="/images/RockPaperScissors/paper.png" alt="paper">
+                </div>
+            
+                <div class="choice" id="p2scissors">
+                    <img src="/images/RockPaperScissors/scissors.png" alt="scissors">
+                </div>
+            </div>
+        </div>
+        
+
+        <button class="btn btn-outline-success mt-1" id="nextRound">Next Round</button>
+        <button class="btn btn-outline-secondary mt-1" id="resetGame">New Game</button>
+    </div>

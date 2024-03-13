@@ -1,0 +1,40 @@
+.title, .container {
+    text-align: center;
+}
+.game {
+    display: flex;
+    border: 1px solid black;
+}
+
+.round-select{
+    width: 20%;
+}
+
+img {
+    width: 50%;
+    margin: 10px;
+}
+
+.p1choices {
+    flex: 1;
+}
+
+.p2choices {
+    flex: 1;
+}
+
+.selected {
+    background-color: lightblue;
+}
+
+.green {
+    color: #00CC00;
+}
+
+.red {
+    color: red;
+}
+
+.yellow {
+    color: #FFC000;
+}

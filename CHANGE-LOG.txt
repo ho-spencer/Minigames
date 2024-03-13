@@ -1,0 +1,26 @@
+======================================================================
+3/13/2024
+Created Minigame Express App. Add Rock, Paper, Scissors
+======================================================================
+    Created Minigame Express App.
+
+    Setup
+        - setup node (npm init -y)
+        - npm installed express, ejs, ejs-mate
+
+    app.js
+        - set up get request for Rock Paper Scissors game
+
+    boilerplate.ejs
+        - created a boilerplate (default html layout) for the express app
+        - included Bootstrap v5.3 JS and CSS cdn links
+        - added scripts for rock, paper, scissors game
+            - rockpaperscissors.js -- game logic
+            - RockPaperScissorsFunctions.js -- helper functions for the game
+
+    RockPaperScissors.ejs
+        - copied previous rock paper scissors html code to this ejs file (to use with boilerplate)
+        - using boilerplate layout
+
+    RockPaperScissors.css (in public directory)
+        - stylesheet for Rock Paper Scissors game
