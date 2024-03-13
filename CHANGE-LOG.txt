@@ -1,5 +1,25 @@
 ======================================================================
 3/13/2024
+Rock Paper Scissors play vs. NPC
+======================================================================
+    Update Rock, Paper, Scissors game so Player 1 (user) plays against the computer, 'NPC'
+
+    RockPaperScissors.ejs
+        - update ID attribute of elements from player2 to better represent NPC player
+
+    rockpaperscissors.js
+        - update Query Selectors for the change of id names from P2 to NPC
+        - update variable names of query selectors to better represent the elements for the NPC
+            - update game logic to use the correct variable names for the npc
+    
+    RockPaperScissorsFunctions.js
+        - update functions to use correct variable names representing the elements for the NPC player
+        - create function to randomize NPC choice to play rock, paper, or scissors
+
+
+
+======================================================================
+3/13/2024
 Home Page, navbar partial
 ======================================================================
     Added a Home Page. Added a navbar partial to use with various views.

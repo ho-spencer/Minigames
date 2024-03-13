@@ -3,27 +3,62 @@
 ========================================================*/
 
 /*
+    NPC Selection
+        - function to randomize npc's selection between rock, paper, and scissors
+*/
+function npcSelection() {
+    let choice = Math.floor(Math.random() * 3 + 1);     // random number between 1-3
+
+    switch (choice) {
+        // 1 = npc chooses rock
+        case 1:
+            npcChoices.classList.add("rock");
+            npcRock.classList.add("selected");
+            break;
+        // 2 = npc chooses paper
+        case 2:
+            npcChoices.classList.add("paper");
+            npcPaper.classList.add("selected");
+            break;
+        // 3 = npc chooses scissors
+        case 3:
+            npcChoices.classList.add("scissors");
+            npcScissors.classList.add("selected");
+            break;
+        // remove any added classes used to determine NPC play choice and background highlight color
+        default:
+            npcChoices.classList.remove("rock", "paper", "scissors");
+            npcRock.classList.remove("selected");
+            npcPaper.classList.remove("selected");
+            npcScissors.classList.remove("selected");
+    }
+}
+
+
+/*
     Reset Selections
-        - set player selection boolean to false (p1Played / p2Played)
+        - set player selection boolean to false (p1Played)
         - remove player choice from class list
         - remove selected class (remove highlighted selection)
+        - remove colored title showing round winner/loser
 */
 function resetSelections() {
     p1Played = false;
-    p2Played = false;
     
+    choice = 0;             // reset npc choice (no selection)
+
     p1Choices.classList.remove("rock", "paper", "scissors");
-    p2Choices.classList.remove("rock", "paper", "scissors");
+    npcChoices.classList.remove("rock", "paper", "scissors");
     
     p1Rock.classList.remove("selected");
-    p2Rock.classList.remove("selected");
+    npcRock.classList.remove("selected");
     p1Paper.classList.remove("selected");
-    p2Paper.classList.remove("selected");
+    npcPaper.classList.remove("selected");
     p1Scissors.classList.remove("selected");
-    p2Scissors.classList.remove("selected");
+    npcScissors.classList.remove("selected");
 
     player1Title.classList.remove("green", "red", "yellow");
-    player2Title.classList.remove("green", "red", "yellow");
+    npcTitle.classList.remove("green", "red", "yellow");
 }
 
 /*
@@ -34,9 +69,9 @@ function resetSelections() {
 function resetGame() {
     resetSelections();
     p1Score = 0;
-    p2Score = 0;
+    npcScore = 0;
     p1Span.innerText = 0;
-    p2Span.innerText = 0;
+    npcSpan.innerText = 0;
     winnerDisplay.innerText = "";
     isGameOver = false;
 }
@@ -48,7 +83,7 @@ function resetGame() {
 */
 function targetRoundsReached() {
         isGameOver = true;
-        winnerText = (p1Score == targetRoundsInt) ? "Player 1 wins" : "Player 2 Wins";
+        winnerText = (p1Score == targetRoundsInt) ? "Player 1 wins" : "NPC Wins";
         winnerDisplay.innerText = winnerText;
 }
 
@@ -61,10 +96,10 @@ function updateP1Score() {
     player1WinsColor()
 }
 
-function updateP2Score() {
-    p2Score += 1;
-    p2Span.innerText = p2Score;
-    player2WinsColor();
+function updateNPCScore() {
+    npcScore += 1;
+    npcSpan.innerText = npcScore;
+    npcWinsColor();
 }
 
 /*
@@ -72,15 +107,15 @@ function updateP2Score() {
 */
 function player1WinsColor() {
     player1Title.classList.add("green");
-    player2Title.classList.add("red");
+    npcTitle.classList.add("red");
 }
 
-function player2WinsColor() {
+function npcWinsColor() {
     player1Title.classList.add("red");
-    player2Title.classList.add("green");
+    npcTitle.classList.add("green");
 }
 
 function tieColor() {
     player1Title.classList.add("yellow");
-    player2Title.classList.add("yellow");
+    npcTitle.classList.add("yellow");
 }

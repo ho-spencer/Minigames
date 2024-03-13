@@ -2,18 +2,22 @@
 const p1Rock = document.querySelector("#p1rock");                   // div containing rock img for p1
 const p1Paper = document.querySelector("#p1paper");                 // div containing paper img for p1
 const p1Scissors = document.querySelector("#p1scissors");           // div containing scissors img for p1
-const p2Rock = document.querySelector("#p2rock");                   // div containing rock img for p2
-const p2Paper = document.querySelector("#p2paper");                 // div containing paper img for p2
-const p2Scissors = document.querySelector("#p2scissors");           // div containing scissors img for p2
+
+const npcRock = document.querySelector("#npcRock");                   // div containing rock img for npc
+const npcPaper = document.querySelector("#npcPaper");                 // div containing paper img for npc
+const npcScissors = document.querySelector("#npcScissors");           // div containing scissors img for npc
+
 const nextRoundButton = document.querySelector("#nextRound");       // button to start next round
 const resetGameButton = document.querySelector("#resetGame");       // button to reset game
+
 const selectScore = document.querySelector("#playTo");              // select element
 const winnerDisplay = document.querySelector("#winnerDisplay");     // h2 to display winner of game
+
 const player1Title = document.querySelector("#player1Title");       // player 1 title
-const player2Title = document.querySelector("#player2Title");       // player 2 title
+const npcTitle = document.querySelector("#npcTitle");               // npc title
 
 const p1Choices = document.querySelector("#p1");
-const p2Choices = document.querySelector("#p2");
+const npcChoices = document.querySelector("#npc");
 
 // variables for number of rounds
 let targetRounds = selectScore.value;           // set target rounds based on select value
@@ -23,15 +27,14 @@ let isGameOver = false;                         // variable to track if game is 
 
 // variables for spans (score display)
 const p1Span = document.querySelector("#p1Score");
-const p2Span = document.querySelector("#p2Score");
+const npcSpan = document.querySelector("#npcScore");
 
 // variable to update score value
 let p1Score = 0;
-let p2Score = 0;
+let npcScore = 0;
 
-// track if p1 / p2 has played this round
+// track if p1 has played this round
 let p1Played = false;
-let p2Played = false;
 
 /*
     Select Score Event Listener
@@ -45,179 +48,103 @@ selectScore.addEventListener("change", function() {
     resetGame();
 })
 
-
 /*
-    P1 and P2 Event Listener
-        - add class ('rock', 'paper', or 'scissors') based on player's selection
-            - used to determine winner
-        - update class for the div element containing the image with 'selected'
-            - used to update background color on image div to highlight each player's selection
-        - update score and round winner display
-        - if target number of rounds reached, display winner
+    P1 Event Listener
+        - player selection can only be made if
+            - p1Played=false (player 1 hasn't played a move/selected a move)
+            - 'best of # of rounds' has been selected
+            - !isGameOver=false (game is not over -- p1/npc score has not reached target # of rounds for a win)
+        - NPC makes selection when user makes selection
+        - determine round winner
 */
-// P1 ROCK
 p1Rock.addEventListener("click", function() {
-
+    
     if (!p1Played && targetRoundsInt > 0 && !isGameOver) {
-        p1Choices.classList.add("rock");        // update class to reflect p1's selection
-        p1Rock.classList.add("selected");       // update background color to show selected option
+        p1Choices.classList.add("rock");            // update class to reflect P1's seletion
+        p1Rock.classList.add("selected");           // update background color to show selected option
 
-        if (p2Choices.classList.contains("rock")) {
+        npcSelection();                             // function to make NPC's selection
+
+        // logic to determine round winner and update score
+        if (npcChoices.classList.contains("rock")) {
             tieColor();
         }
         
-        if (p2Choices.classList.contains("paper")) {
-            updateP2Score();
+        if (npcChoices.classList.contains("paper")) {
+            updateNPCScore();
         }
 
-        if (p2Choices.classList.contains("scissors")) {
+        if (npcChoices.classList.contains("scissors")) {
             updateP1Score();
         }
 
         // target rounds reached - display winner
-        if ( (p1Score == targetRoundsInt) || (p2Score == targetRoundsInt) ){
+        if ( (p1Score == targetRoundsInt) || (npcScore == targetRoundsInt) ){
             targetRoundsReached();
         }
-
-        p1Played = true;    // update player played boolean so user can't change selection mid round
     }
+
+    p1Played = true;
 })
 
-// P1 PAPER
 p1Paper.addEventListener("click", function() {
     
     if (!p1Played && targetRoundsInt > 0 && !isGameOver) {
-        p1Choices.classList.add("paper"); 
-        p1Paper.classList.add("selected");
+        p1Choices.classList.add("paper");            // update class to reflect P1's seletion
+        p1Paper.classList.add("selected");           // update background color to show selected option
 
-        if (p2Choices.classList.contains("rock")) {
+        npcSelection();                             // function to make NPC's selection
+
+        // logic to determine round winner and update score
+        if (npcChoices.classList.contains("rock")) {
             updateP1Score();
         }
         
-        if (p2Choices.classList.contains("paper")) {
+        if (npcChoices.classList.contains("paper")) {
             tieColor();
         }
 
-        if (p2Choices.classList.contains("scissors")) {
-            updateP2Score();
+        if (npcChoices.classList.contains("scissors")) {
+            updateNPCScore();
         }
 
-        if ( (p1Score == targetRoundsInt) || (p2Score == targetRoundsInt) ){
+        // target rounds reached - display winner
+        if ( (p1Score == targetRoundsInt) || (npcScore == targetRoundsInt) ){
             targetRoundsReached();
         }
-
-
-        p1Played = true;
     }
+
+    p1Played = true;
 })
 
-// P1 SCISSORS
 p1Scissors.addEventListener("click", function() {
     
     if (!p1Played && targetRoundsInt > 0 && !isGameOver) {
-        p1Choices.classList.add("scissors"); 
-        p1Scissors.classList.add("selected");
+        p1Choices.classList.add("scissors");            // update class to reflect P1's seletion
+        p1Scissors.classList.add("selected");           // update background color to show selected option
 
-        if (p2Choices.classList.contains("rock")) {
-            updateP2Score();
+        npcSelection();                                 // function to make NPC's selection
+
+        // logic to determine round winner and update score
+        if (npcChoices.classList.contains("rock")) {
+            updateNPCScore();
         }
         
-        if (p2Choices.classList.contains("paper")) {
-            updateP2Score();
-        }
-
-        if (p2Choices.classList.contains("scissors")) {
-            tieColor();
-        }
-
-        if ( (p1Score == targetRoundsInt) || (p2Score == targetRoundsInt) ){
-            targetRoundsReached();
-        }
-
-
-        p1Played = true;
-    }
-})
-
-// P2 ROCK
-p2Rock.addEventListener("click", function() {
-    
-    if (!p2Played && targetRoundsInt > 0 && !isGameOver) {
-        p2Choices.classList.add("rock");
-        p2Rock.classList.add("selected");  
-        
-        if (p1Choices.classList.contains("rock")) {
-            tieColor();
-        }
-        
-        if (p1Choices.classList.contains("paper")) {
-            updateP1Score();  
-        }
-
-        if (p1Choices.classList.contains("scissors")) {
-            updateP2Score();
-        }
-
-        if ( (p1Score == targetRoundsInt) || (p2Score == targetRoundsInt) ){
-            targetRoundsReached();
-        }
-
-        p2Played = true;
-    }
-})
-
-// P2 PAPER
-p2Paper.addEventListener("click", function() {
-    
-    if (!p2Played && targetRoundsInt > 0 && !isGameOver) {
-        p2Choices.classList.add("paper"); 
-        p2Paper.classList.add("selected");
-
-        if (p1Choices.classList.contains("rock")) {
-            updateP2Score();
-        }
-
-        if (p1Choices.classList.contains("paper")) {
-            tieColor();
-        }
-
-        if (p1Choices.classList.contains("scissors")) {
+        if (npcChoices.classList.contains("paper")) {
             updateP1Score();
         }
 
-        if ( (p1Score == targetRoundsInt) || (p2Score == targetRoundsInt) ){
-            targetRoundsReached();
-        }
-
-        p2Played = true;
-    }
-})
-
-// P2 SCISSORS
-p2Scissors.addEventListener("click", function() {
-    
-    if (!p2Played && targetRoundsInt > 0 && !isGameOver) {
-        p2Choices.classList.add("scissors");
-        p2Scissors.classList.add("selected");
-        
-        if (p1Choices.classList.contains("rock")) {
-            updateP1Score();
-        }
-            
-        if (p1Choices.classList.contains("paper")) {
-            updateP2Score();
-        }
-        
-        if (p1Choices.classList.contains("scissors")) {
+        if (npcChoices.classList.contains("scissors")) {
             tieColor();
         }
 
-        if ( (p1Score == targetRoundsInt) || (p2Score == targetRoundsInt) ){
+        // target rounds reached - display winner
+        if ( (p1Score == targetRoundsInt) || (npcScore == targetRoundsInt) ){
             targetRoundsReached();
         }
-
-        p2Played = true;
     }
+
+    p1Played = true;
 })
 
 // Next Round Setup
