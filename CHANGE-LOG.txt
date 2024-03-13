@@ -1,5 +1,29 @@
 ======================================================================
 3/13/2024
+Home Page, navbar partial
+======================================================================
+    Added a Home Page. Added a navbar partial to use with various views.
+
+    home.ejs
+        - main landing page for Minigames web app
+        - included bootstrap JS and CSS cdn links
+        - included stylesheet for home page (home.css)
+        - added a navbar
+            - used to go to different pages in web app
+        - added intro content in center of home page
+        - added footer
+
+    navbar.ejs
+        - navbar partial to use with various views
+        - used navbar content from bootstrap
+            - copied in given code and modified links to for this web app
+        
+    boilerplate.ejs
+        - included navbar partial at top of the <body> element
+
+
+======================================================================
+3/13/2024
 Created Minigame Express App. Add Rock, Paper, Scissors
 ======================================================================
     Created Minigame Express App.

@@ -1,0 +1,35 @@
+<!-- navbar partial -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+        <!-- title of navbar - links to home page -->
+        <a class="navbar-brand" href="/">Minigames</a>
+        
+        <!-- button to show navbar options if page is collapsed -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+
+                <!-- navbar link to Home page -->
+                <a class="nav-link active" href="/">Home</a>
+
+                <!-- Dropdown to show links to different minigames -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Minigames
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="/rockpaperscissors">Rock Paper Scissors</a>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+    </div>
+</nav>

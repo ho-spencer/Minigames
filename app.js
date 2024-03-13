@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));    // serve "public" directory (for static assets)
 
 app.get("/", (req, res) => {
-    res.send("HELLO");
+    res.render("home.ejs")
 })
 
 app.get("/rockpaperscissors", (req, res) => {
