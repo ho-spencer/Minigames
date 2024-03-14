@@ -17,7 +17,6 @@ Rock Paper Scissors play vs. NPC
         - create function to randomize NPC choice to play rock, paper, or scissors
 
 
-
 ======================================================================
 3/13/2024
 Home Page, navbar partial
