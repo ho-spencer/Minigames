@@ -34,7 +34,6 @@ function npcSelection() {
     }
 }
 
-
 /*
     Reset Selections
         - set player selection boolean to false (p1Played)

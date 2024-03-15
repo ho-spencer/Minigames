@@ -1,4 +1,14 @@
 <% layout("/layouts/boilerplate.ejs") %>
+
+<!-- Script to add RockPaperScissors.css stylesheet link>
+    to the head of the boilerpalte.ejs  -->
+<script>
+    const link = document.createElement("link");
+    link.setAttribute("rel", "stylesheet");
+    link.setAttribute("href", "/stylesheets/RockPaperScissors.css");
+    document.head.appendChild(link);
+</script>
+
 <h1 class="title">Rock Paper Scissors</h1>
 
     <div class="container">
@@ -55,3 +65,6 @@
         <button class="btn btn-outline-success mt-1" id="nextRound">Next Round</button>
         <button class="btn btn-outline-secondary mt-1" id="resetGame">New Game</button>
     </div>
+
+    <script src="/javascripts/rockpaperscissors.js"></script>           <!-- Game Logic -->
+    <script src="/javascripts/RockPaperScissorsFunctions.js"></script>  <!-- R.P.S Helper Functions -->

@@ -1,4 +1,24 @@
 ======================================================================
+3/15/2024
+Monkeytype Setup
+======================================================================
+    Setup for Monkeytype.
+
+    - created monkeytype.ejs for the game
+
+    app.js
+        - setup get route for /monkeytype
+
+    boilerplate.ejs
+        - removed RockPaperScissors.css link and JS scripts for rock, paper, scissors game
+            - moved link and script calls to RockPaperScissors.ejs so they're only loaded when Rock,
+            Paper, Scissors game is loaded instead of loading on every route
+    
+    navbar.ejs
+        - added monkeytype to drop down list of games
+
+
+======================================================================
 3/13/2024
 Rock Paper Scissors play vs. NPC
 ======================================================================

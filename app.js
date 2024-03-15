@@ -12,8 +12,13 @@ app.get("/", (req, res) => {
     res.render("home.ejs")
 })
 
+// ROCK PAPER SCISSORS
 app.get("/rockpaperscissors", (req, res) => {
     res.render("games/RockPaperScissors.ejs");
+})
+
+app.get("/monkeytype", (req, res) => {
+    res.render("games/monkeytype.ejs")
 })
 
 app.listen(8080, () => {
