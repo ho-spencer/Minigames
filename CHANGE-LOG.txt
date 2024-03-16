@@ -1,5 +1,30 @@
 ======================================================================
 3/15/2024
+Monkeytype - Add all keys to event listener (key flash animation)
+======================================================================
+    rockpaperscissors.js & RockPaperScissorsFunctions.js
+        - moved scripts into /javascripts/RockPaperScissors/ directory
+    
+    RockPaperScissors.ejs
+        - updated script tag to use the correct file path
+
+    monkeytype.js   
+        - moved scripts into /javascripts/Monkeytype/ directory
+        - added element selectors for the rest of the keys
+            - all keys displayed on game (divs) change background color when pressed (keydown)
+                - pressedColor()
+            -  on release (keyup), background color goes back to original color
+
+    monkeytype.ejs
+        - updated script tag to use correct file path
+
+    monkeytypeFunctions.js
+        - created file to store helper functions for monkeytype.js
+        - moved pressedColor() into file
+
+
+======================================================================
+3/15/2024
 Monkeytype Setup 2
 ======================================================================
     monkeytype.ejs
