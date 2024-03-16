@@ -1,5 +1,15 @@
 ======================================================================
 3/15/2024
+Monkeytype - Styling 
+======================================================================
+    - test span
+        - changed color
+        - center aligned
+    - centered keyboard display
+    - updated margin for each key
+
+======================================================================
+3/15/2024
 Monkeytype - Updated Key Background Color Change
 ======================================================================
     Updated key display animation so releasing a key doesn't toggle background color of another key being held.

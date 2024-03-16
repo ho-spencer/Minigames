@@ -2,6 +2,11 @@ body {
     background-color: #2D2E30;
 }
 
+.keyboardRow {
+    display: flex;
+    justify-content: center;
+}
+
 .key {
     background-color: #242527;
     height: 2rem;
@@ -9,7 +14,7 @@ body {
     border-radius: 10px;
     text-align: center;
     display: inline-block;
-    margin-top: 5px;
+    margin: 2px;
 }
 
 .number, .letter {
@@ -19,4 +24,10 @@ body {
 
 .pressed-color {
     background-color: #84a59d;
+}
+
+#testSpan {
+    text-align: center;
+    font-size: 30px;
+    color: #D3D3D3;
 }
