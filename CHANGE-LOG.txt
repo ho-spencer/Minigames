@@ -1,5 +1,27 @@
 ======================================================================
 3/15/2024
+Monkeytype Setup 2
+======================================================================
+    monkeytype.ejs
+        - added div/span display for all keyboard keys
+    
+    Created monkeytype.js
+        - monkeytype game logic
+        - added keyboard event listener
+            - added row2 keys to event listener to simulate keypress(Q..P)
+                - keydown event listener to add class "pressed-color" when key is pressed
+                    - background color changes
+                - keyup event listener to remove class "pressed-color" when key is released
+                    - remove class name so we can "re-add" when key is pressed again to simulate color flash
+    
+    Created monkeytype.css
+        - stylesheet for monkeytype game
+        - created style for class "pressed-color"
+            - show keyboard press on screen -- div representing the key that is pressed "flashes" background color
+
+
+======================================================================
+3/15/2024
 Monkeytype Setup
 ======================================================================
     Setup for Monkeytype.

@@ -1,3 +1,76 @@
 <% layout("/layouts/boilerplate.ejs") %>
 
-<h1 class="title">Monkeytype</h1>
+<!-- Script to add monkeytype.css stylesheet link>
+    to the head of the boilerpalte.ejs  -->
+<script>
+    const link = document.createElement("link");
+    link.setAttribute("rel", "stylesheet");
+    link.setAttribute("href", "/stylesheets/monkeytype.css");
+    document.head.appendChild(link);
+</script>
+
+
+<div class="row">
+    <h1 class="title">Monkeytype</h1>
+
+    <span class="test" id="testSpan"></span>
+
+    <!-- KEYBOARD -->
+    <div class="keyboard" id="keyboard">
+        <div class="keyboardRow" id="keyboardRow1">
+            <div class="key" id="key"><span class="number">1</span></div>
+            <div class="key" id="key"><span class="number">2</span></div>
+            <div class="key" id="key"><span class="number">3</span></div>
+            <div class="key" id="key"><span class="number">4</span></div>
+            <div class="key" id="key"><span class="number">5</span></div>
+            <div class="key" id="key"><span class="number">6</span></div>
+            <div class="key" id="key"><span class="number">7</span></div>
+            <div class="key" id="key"><span class="number">8</span></div>
+            <div class="key" id="key"><span class="number">9</span></div>
+            <div class="key" id="key"><span class="number">0</span></div>
+            <div class="key" id="key"><span class="number">-</span></div>
+        </div>
+        <div class="keyboardRow" id="keyboardRow2">
+            <div class="key" id="keyQ"><span class="letter">q</span></div>
+            <div class="key" id="keyW"><span class="letter">w</span></div>
+            <div class="key" id="keyE"><span class="letter">e</span></div>
+            <div class="key" id="keyR"><span class="letter">r</span></div>
+            <div class="key" id="keyT"><span class="letter">t</span></div>
+            <div class="key" id="keyY"><span class="letter">y</span></div>
+            <div class="key" id="keyU"><span class="letter">u</span></div>
+            <div class="key" id="keyI"><span class="letter">i</span></div>
+            <div class="key" id="keyO"><span class="letter">o</span></div>
+            <div class="key" id="keyP"><span class="letter">p</span></div>
+            <div class="key" id="key["><span class="letter">[</span></div>
+            <div class="key" id="key]"><span class="letter">]</span></div>
+        </div>
+        <div class="keyboardRow" id="keyboardRow3">
+            <div class="key" id="key"><span class="letter">a</span></div>
+            <div class="key" id="key"><span class="letter">s</span></div>
+            <div class="key" id="key"><span class="letter">d</span></div>
+            <div class="key" id="key"><span class="letter">f</span></div>
+            <div class="key" id="key"><span class="letter">g</span></div>
+            <div class="key" id="key"><span class="letter">h</span></div>
+            <div class="key" id="key"><span class="letter">j</span></div>
+            <div class="key" id="key"><span class="letter">l</span></div>
+            <div class="key" id="key"><span class="letter">l</span></div>
+        </div>
+        <div class="keyboardRow" id="keyboardRow4">
+            <div class="key" id="key"><span class="letter">z</span></div>
+            <div class="key" id="key"><span class="letter">x</span></div>
+            <div class="key" id="key"><span class="letter">c</span></div>
+            <div class="key" id="key"><span class="letter">v</span></div>
+            <div class="key" id="key"><span class="letter">b</span></div>
+            <div class="key" id="key"><span class="letter">n</span></div>
+            <div class="key" id="key"><span class="letter">m</span></div>
+        </div>
+        <div class="keyboardRow" id="keyboardRow5">
+            <div class="key"><span class="letter">space</span></div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="/javascripts/monkeytype.js"></script>
