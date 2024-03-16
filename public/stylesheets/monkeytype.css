@@ -18,9 +18,5 @@ body {
 }
 
 .pressed-color {
-    animation: pressedColor 0.1s;
-}
-
-@keyframes pressedColor {
-    100%    {background-color: #84a59d;}
+    background-color: #84a59d;
 }
