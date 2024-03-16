@@ -58,54 +58,6 @@ window.addEventListener("keydown", function(e) {
 });
 
 window.addEventListener("keyup", function(e) {
-    // Row 1
-    div1.classList.remove("pressed-color");
-    div2.classList.remove("pressed-color");
-    div3.classList.remove("pressed-color");
-    div4.classList.remove("pressed-color");
-    div5.classList.remove("pressed-color");
-    div6.classList.remove("pressed-color");
-    div7.classList.remove("pressed-color");
-    div8.classList.remove("pressed-color");
-    div9.classList.remove("pressed-color");
-    div0.classList.remove("pressed-color");
-    divMinus.classList.remove("pressed-color");
-
-    // Row 2
-    divQ.classList.remove("pressed-color");
-    divW.classList.remove("pressed-color");
-    divE.classList.remove("pressed-color");
-    divR.classList.remove("pressed-color");
-    divT.classList.remove("pressed-color");
-    divY.classList.remove("pressed-color");
-    divU.classList.remove("pressed-color");
-    divI.classList.remove("pressed-color");
-    divO.classList.remove("pressed-color");
-    divP.classList.remove("pressed-color");
-    divBL.classList.remove("pressed-color");
-    divBR.classList.remove("pressed-color");
-
-    // Row 3
-    divA.classList.remove("pressed-color");
-    divS.classList.remove("pressed-color");
-    divD.classList.remove("pressed-color");
-    divF.classList.remove("pressed-color");
-    divG.classList.remove("pressed-color");
-    divH.classList.remove("pressed-color");
-    divJ.classList.remove("pressed-color");
-    divK.classList.remove("pressed-color");
-    divL.classList.remove("pressed-color");
-
-    // Row 4
-    divZ.classList.remove("pressed-color");
-    divX.classList.remove("pressed-color");
-    divC.classList.remove("pressed-color");
-    divV.classList.remove("pressed-color");
-    divB.classList.remove("pressed-color");
-    divN.classList.remove("pressed-color");
-    divM.classList.remove("pressed-color");
-
-    // Row 5
-    divSpace.classList.remove("pressed-color");
+    releasedColor(e.code);
 });
 

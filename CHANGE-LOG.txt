@@ -1,5 +1,16 @@
 ======================================================================
 3/15/2024
+Monkeytype - Updated Key Background Color Change
+======================================================================
+    Updated key display animation so releasing a key doesn't toggle background color of another key being held.
+
+    monkeytype.js
+        - updated keyup event listener to use releasedColor()
+            - releasing one key only applies the background change to that key
+
+
+======================================================================
+3/15/2024
 Monkeytype - Add all keys to event listener (key flash animation)
 ======================================================================
     rockpaperscissors.js & RockPaperScissorsFunctions.js
