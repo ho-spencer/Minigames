@@ -1,17 +1,17 @@
-const testSpan = document.querySelector("#testSpan");
+const typeWords = document.querySelector("#typeWords");
 
 // Variables for Row 1 divs
-const div1 = document.querySelector("#key1");
-const div2 = document.querySelector("#key2");
-const div3 = document.querySelector("#key3");
-const div4 = document.querySelector("#key4");
-const div5 = document.querySelector("#key5");
-const div6 = document.querySelector("#key6");
-const div7 = document.querySelector("#key7");
-const div8 = document.querySelector("#key8");
-const div9 = document.querySelector("#key9");
-const div0 = document.querySelector("#key0");
-const divMinus = document.querySelector("#minus");
+// const div1 = document.querySelector("#key1");
+// const div2 = document.querySelector("#key2");
+// const div3 = document.querySelector("#key3");
+// const div4 = document.querySelector("#key4");
+// const div5 = document.querySelector("#key5");
+// const div6 = document.querySelector("#key6");
+// const div7 = document.querySelector("#key7");
+// const div8 = document.querySelector("#key8");
+// const div9 = document.querySelector("#key9");
+// const div0 = document.querySelector("#key0");
+// const divMinus = document.querySelector("#minus");
 
 // Variables for Row 2 divs
 const divQ = document.querySelector("#keyQ");
@@ -50,14 +50,35 @@ const divM = document.querySelector("#keyM");
 // Variables for Row 5 divs
 const divSpace = document.querySelector("#space");
 
+let isGameStart = false;
+
 // Event listener for entire window to detect keyboard keydown
-window.addEventListener("keydown", function(e) {
-    console.log(e);
-    testSpan.innerText = e.key;
-    pressedColor(e.code);
+window.addEventListener("keydown", (e) => {
+    if (!isGameStart) {
+        pressedColor(e.code);
+
+        // FOR RANDOM WORDS API - async function for add event listener
+        // const words = await randomWord();
+        // typeWords.innerText = words;
+        
+        // USING WORD LIST
+        const words = randomWordList(wordsList);
+        typeWords.innerText = words;
+        isGameStart = true;
+    }
+    else {
+            // DEBUG PRINTS
+        //console.log(e);
+        // typeWords.innerText = e.key;
+
+
+        pressedColor(e.code); 
+    }
 });
 
 window.addEventListener("keyup", function(e) {
     releasedColor(e.code);
 });
+
+
 

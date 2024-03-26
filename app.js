@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
-const ejsMate = require("ejs-mate")
+const ejsMate = require("ejs-mate");
+
+
 
 const app = express();
 app.engine("ejs", ejsMate);

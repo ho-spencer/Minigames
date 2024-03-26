@@ -1,4 +1,33 @@
 ======================================================================
+3/25/2024
+Generate words for game
+======================================================================
+    Generate random words for typing game.
+
+    monkeytype.ejs
+        - updated span to show a default starting message
+        - span also now displays a string of random words when any key is pressed 
+            - "starting the game"
+
+    monkeytype.js
+        - added logic to update span innerText
+            - on page load: starting message is shown
+            - once any key is pressed once: show random words for game
+
+    monkeytypeFunctions.js
+        - created function randomWordList()
+            - accepts param for array of strings (words)
+                - array is currently pre-set (wordList.js)
+            - accepts param for number of words to generate
+            - creates array of words using the array in wordList.js
+            - returns the array of words as a SINGLE string
+
+    wordList.js
+        - JS file containing a single array of strings (words)
+        - this array is used to generate the random words array for the typing game
+
+
+======================================================================
 3/15/2024
 Monkeytype - Styling 
 ======================================================================
