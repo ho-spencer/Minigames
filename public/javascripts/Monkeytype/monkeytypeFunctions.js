@@ -397,24 +397,3 @@ function randomWordList(wordArr, numWords = 10) {
 
     return randomWords.join(' ');
 }
-
-
-/*
-    Random Word()
-        Generate a random word or words.
-
-        - number of words based on query string "?words=number"
-        - current default is 10 words
-        - return the array of words (res.data), as one string with words separated with a space
-*/
-// const randomWord = async (numWords = 10) => {
-//     try {
-//         const res = await axios.get(`https://random-word-api.herokuapp.com/word?number=${numWords}`);
-//         // console.log(res.data);
-//         return res.data.join(' ');
-//     }
-//     catch (e) {
-//         console.log("ERROR: ", e);
-//     }
-// };
-

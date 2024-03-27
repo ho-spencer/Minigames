@@ -1,4 +1,25 @@
 ======================================================================
+3/27/2024
+Start button to begin game
+======================================================================
+    Updated typing to use start button to begin
+        - simplified from previous version (pressing any key)
+
+    monkeytype.ejs
+        - added button (from bootstrap)
+
+    monkeytype.js
+        - added selector for start button
+        - added event listener for button (start game)
+            - updated logic 
+                - pressing the start button generates the random words and displays it on the game
+                - key presses don't work until game is started
+    
+    monkeytype.css
+        - updated styling for start button to center on page
+
+
+======================================================================
 3/25/2024
 Generate words for game
 ======================================================================

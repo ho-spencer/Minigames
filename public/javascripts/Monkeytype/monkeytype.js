@@ -1,4 +1,5 @@
 const typeWords = document.querySelector("#typeWords");
+const startButton = document.querySelector("#startButton");
 
 // Variables for Row 1 divs
 // const div1 = document.querySelector("#key1");
@@ -52,33 +53,31 @@ const divSpace = document.querySelector("#space");
 
 let isGameStart = false;
 
-// Event listener for entire window to detect keyboard keydown
-window.addEventListener("keydown", (e) => {
+// Event listener for start button
+startButton.addEventListener("click", function(e) {
     if (!isGameStart) {
+        // GENERATE STRING OF ALL THE WORDS
+        const wordStr = randomWordList(wordsList);      // STRING of all words generated
+        const charArr = [...wordStr];                   // char array of wordStr
+
+        console.log(wordStr);                       // DEBUG
+        console.log(charArr);                       // DEBUG
+        console.log("GAME STARTED")                 // DEBUG
+
+        typeWords.innerText = wordStr;
+        isGameStart = true;  
+    }
+})
+
+// Event listener for entire window to detect keyboard keydown
+window.addEventListener("keydown", function(e) {  
+    if (isGameStart) {
         pressedColor(e.code);
 
-        // FOR RANDOM WORDS API - async function for add event listener
-        // const words = await randomWord();
-        // typeWords.innerText = words;
-        
-        // USING WORD LIST
-        const words = randomWordList(wordsList);
-        typeWords.innerText = words;
-        isGameStart = true;
-    }
-    else {
-            // DEBUG PRINTS
-        //console.log(e);
-        // typeWords.innerText = e.key;
-
-
-        pressedColor(e.code); 
     }
 });
+
 
 window.addEventListener("keyup", function(e) {
     releasedColor(e.code);
 });
-
-
-

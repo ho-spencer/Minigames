@@ -7,16 +7,26 @@ body {
     justify-content: center;
 }
 
+
+/*
+    Individual Key in keyboard display
+        - height/width: adjust size of key
+        - border radius: add curve to corners of key
+        - text-align: center the text inside key div (adjusting the span)
+*/
 .key {
     background-color: #242527;
     height: 2rem;
     width: 2rem;
     border-radius: 10px;
     text-align: center;
-    display: inline-block;
     margin: 2px;
 }
 
+/*
+    Letter / Number spans
+        - vertial-align: align span innertext to vertical center
+*/
 .number, .letter {
     color: #D3D3D3;
     vertical-align: middle;
@@ -26,6 +36,23 @@ body {
     background-color: #84a59d;
 }
 
+/*
+    Start Button
+        - margin left/right: center in page
+        - margin top: space between button and keyboard dispaly
+        - width: adjust size to make button smaller (orginally width of whole page due to row div)
+*/
+#startButton {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    width: 5%;
+}
+
+/*
+    Span to display words for typing game
+        - text align: center in page
+*/
 #typeWords {
     text-align: center;
     font-size: 30px;
