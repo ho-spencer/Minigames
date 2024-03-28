@@ -397,3 +397,40 @@ function randomWordList(wordArr, numWords = 10) {
 
     return randomWords.join(' ');
 }
+
+/*
+    Start Restart Game
+        Set inner text of span to display the generated words.
+
+        - generate words and set all the words into a single string (done in the function randomWordList())
+        - create a character array from wordStr
+        - set innerText of the display span to be the single String (string is all the words)
+        - game started: isGameStart = true
+*/
+function startRestartGame() {
+    wordStr = randomWordList(wordsList);      // STRING of all words generated
+    charArr = [...wordStr];                   // char array of wordStr
+    typeWords.innerText = wordStr;
+    isGameStart = true;
+}
+
+/*
+    Key Press Matches Letter
+        Function if a user's key press matches the current letter in the typing game
+*/
+function keyPressMatchesLetter(key) {
+    console.log(`charNum: ${charNum} | Letter: ${charArr[charNum]}`);           // DEBUG
+    console.log(`You pressed: ${key}`);                                         // DEBUG
+
+    correctCount++;
+}
+
+/*
+
+*/
+function wrongKeyPress(key) {
+    console.log(`charNum: ${charNum} | Letter: ${charArr[charNum]}`);           // DEBUG
+    console.log(`You pressed: ${key}`);                                         // DEBUG
+
+    wrongcount++;
+}

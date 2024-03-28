@@ -7,7 +7,6 @@ body {
     justify-content: center;
 }
 
-
 /*
     Individual Key in keyboard display
         - height/width: adjust size of key
@@ -42,18 +41,18 @@ body {
         - margin top: space between button and keyboard dispaly
         - width: adjust size to make button smaller (orginally width of whole page due to row div)
 */
-#startButton {
+#startRestartButton {
     margin-right: auto;
     margin-left: auto;
     margin-top: 10px;
-    width: 5%;
+    width: 10%;
 }
 
 /*
     Span to display words for typing game
         - text align: center in page
 */
-#typeWords {
+.typeWords {
     text-align: center;
     font-size: 30px;
     color: #D3D3D3;

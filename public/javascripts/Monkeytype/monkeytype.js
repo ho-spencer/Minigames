@@ -1,5 +1,5 @@
 const typeWords = document.querySelector("#typeWords");
-const startButton = document.querySelector("#startButton");
+const startRestartButton = document.querySelector("#startRestartButton");
 
 // Variables for Row 1 divs
 // const div1 = document.querySelector("#key1");
@@ -53,28 +53,48 @@ const divSpace = document.querySelector("#space");
 
 let isGameStart = false;
 
+// Variables for generated words for the game
+let wordStr;                // single STRING of all words generated - "word1 word2 word3 word4"
+let charArr;                // char array of wordStr
+
+// Variables for game
+let charNum = 0;            // iterator for char array
+let correctCount = 0;       // count for number of correct letters typed
+let wrongcount = 0;         // count for number of incorrect letters typed
+
+
 // Event listener for start button
-startButton.addEventListener("click", function(e) {
-    if (!isGameStart) {
-        // GENERATE STRING OF ALL THE WORDS
-        const wordStr = randomWordList(wordsList);      // STRING of all words generated
-        const charArr = [...wordStr];                   // char array of wordStr
+startRestartButton.addEventListener("click", function(e) {
+        startRestartGame();
 
-        console.log(wordStr);                       // DEBUG
-        console.log(charArr);                       // DEBUG
-        console.log("GAME STARTED")                 // DEBUG
-
-        typeWords.innerText = wordStr;
-        isGameStart = true;  
-    }
-})
+        console.log("wordSTR: ", wordStr);              // DEBUG
+        console.log("charArr: ", charArr);              // DEBUG
+        console.log("GAME STARTED/RESTARTED")           // DEBUG
+});
 
 // Event listener for entire window to detect keyboard keydown
 window.addEventListener("keydown", function(e) {  
+    // keys only work if game is started (isGameStart = true)
     if (isGameStart) {
+        // console.log(e);         // DEBUG
         pressedColor(e.code);
+        
+        if (e.key === charArr[charNum]) {
+            keyPressMatchesLetter(e.key);
+            
+        }
+        else {
+            wrongKeyPress(e.key);
+        }
 
+        if (charNum === charArr.length - 1) {
+            console.log("END");
+            console.log(`CORRECT LETTERS: ${correctCount}`);
+            console.log(`WRONG LETTERS: ${wrongcount}`);
+        }
     }
+
+    charNum++;
 });
 
 

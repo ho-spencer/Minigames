@@ -1,5 +1,26 @@
 ======================================================================
 3/27/2024
+Key Press Matches Current Letter
+======================================================================
+    Added logic to determine if key press matches current letter. 
+
+    monkeytype.js
+        - added iterator to keep track of the "current" letter in the game
+            - current letter is the current letter user needs to match with a keypress
+        - added logic to keep track of the number of correct/incorrect letters typed during the game
+
+    monkeytypeFunctions.js
+        - startRestartGame()
+            - function to start or restart the game when start button is pressed
+        - keyPressMatchesLetter()
+            - function that runs when correct letter is typed
+            - currently only keeps count of the number of correct letteres typed
+        - wrongKeyPress()
+            - function that runs when the wrong letter is typed
+            - currently only keeps count of the number of incorrect letters typed
+
+======================================================================
+3/27/2024
 Start button to begin game
 ======================================================================
     Updated typing to use start button to begin
