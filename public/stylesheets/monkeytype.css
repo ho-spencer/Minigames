@@ -35,12 +35,17 @@ body {
     background-color: #84a59d;
 }
 
-/*
-    Color when user correctly types a letter
-*/
+/* Color when user correctly / types a letter */
 .correctLetterColor {
     color: #219EBC;
 }
+
+
+/* Color when user types the wrong letter */
+.wrongLetterColor {
+    color: #F28482;
+}
+
 
 /*
     Start Button

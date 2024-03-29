@@ -438,17 +438,11 @@ function startRestartGame() {
     Key Press Matches Letter
         Function if a user's key press matches the current letter in the typing game
 
-        typeWordsChildren - collection of all child spans of typeWords
-            - each span is an individual letter from the generated words
-
-        - add class "correctLetterColor" to the current letter span to update the color
-            when user types the correct letter
-
+        - add class "correctLetterColor" to the current letter span to update the styling
         - increase count for the number of correct letters typed
 */
 function keyPressMatchesLetter(key) {
-    const typeWordsChildren = typeWords.children;  
-    typeWordsChildren[charNum].classList.add("correctLetterColor");             // add class to update color for correct letter press
+    typeWordsChildren[charNum].classList.add("correctLetterColor");               // add class to update color for correct letter press
     
     console.log(`charNum: ${charNum} | Letter: ${charArr[charNum]}`);           // DEBUG
     console.log(`CORRECT MATCH -- You pressed: ${key}`);                        // DEBUG
@@ -457,9 +451,15 @@ function keyPressMatchesLetter(key) {
 }
 
 /*
+    Wrong Key Press
+        Function if a user's key press does not match the current letter in the game
 
+        - add class "wrongLetterColor" to the current letter span to update the styling
+        - increase count for number mis-typed letters
 */
 function wrongKeyPress(key) {
+    typeWordsChildren[charNum].classList.add("wrongLetterColor");               // add class to update color for correct letter press
+    
     console.log(`charNum: ${charNum} | Letter: ${charArr[charNum]}`);           // DEBUG
     console.log(`WRONG KEY -- You pressed: ${key}`);                            // DEBUG
 

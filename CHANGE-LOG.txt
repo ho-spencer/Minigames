@@ -1,5 +1,20 @@
 ======================================================================
 3/29/2024
+Added color to letters for incorrectly typed letters
+======================================================================
+    Updated letters to turn a different color (red) when it is typed wrong.
+
+    monkeytypeFunctions.js
+        - wrongKeyPress()
+            - classlist of the span of the letter is updated to update styling to
+                reflect an incorrect typed letter
+    
+    monkeytype.css
+        - added styling for when a user types the wrong letter in the game
+
+
+======================================================================
+3/29/2024
 Create a span element for each letter
 ======================================================================
     Each letter in the generated words now has it's own span, so that when user is playing the typing game,

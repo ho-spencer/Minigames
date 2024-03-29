@@ -59,10 +59,10 @@ let wordStr;                // single STRING of all words generated - "word1 wor
 let charArr;                // char array of wordStr
 
 // Variables for game
-let charNum = 0;            // iterator for char array
-let correctCount = 0;       // count for number of correct letters typed
-let wrongcount = 0;         // count for number of incorrect letters typed
-
+let charNum = 0;                                // iterator for char array
+let correctCount = 0;                           // count for number of correct letters typed
+let wrongcount = 0;                             // count for number of incorrect letters typed
+const typeWordsChildren = typeWords.children;   // collection of the span elements of each letter inside the typeWords span
 
 // Event listener for start button
 startRestartButton.addEventListener("click", function(e) {    
@@ -95,6 +95,9 @@ window.addEventListener("keydown", function(e) {
             wrongKeyPress(e.key);
         }
 
+
+
+        
         if (charNum === charArr.length - 1) {
             console.log("END");
             console.log(`CORRECT LETTERS: ${correctCount}`);
