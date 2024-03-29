@@ -1,6 +1,7 @@
 const typeWords = document.querySelector("#typeWords");
 const startRestartButton = document.querySelector("#startRestartButton");
 
+
 // Variables for Row 1 divs
 // const div1 = document.querySelector("#key1");
 // const div2 = document.querySelector("#key2");
@@ -64,21 +65,28 @@ let wrongcount = 0;         // count for number of incorrect letters typed
 
 
 // Event listener for start button
-startRestartButton.addEventListener("click", function(e) {
-        startRestartGame();
+startRestartButton.addEventListener("click", function(e) {    
+    startRestartGame();
 
-        console.log("wordSTR: ", wordStr);              // DEBUG
-        console.log("charArr: ", charArr);              // DEBUG
-        console.log("GAME STARTED/RESTARTED")           // DEBUG
+    console.log("wordSTR: ", wordStr);              // DEBUG
+    console.log("charArr: ", charArr);              // DEBUG
+    console.log("GAME STARTED/RESTARTED")           // DEBUG
 });
 
 // Event listener for entire window to detect keyboard keydown
 window.addEventListener("keydown", function(e) {  
     // keys only work if game is started (isGameStart = true)
     if (isGameStart) {
-        // console.log(e);         // DEBUG
+        console.log(e);         // DEBUG
         pressedColor(e.code);
         
+        // Prevent space from pressing start/restart button
+        if (e.target === startRestartButton) {
+            e.preventDefault();
+        }
+
+
+
         if (e.key === charArr[charNum]) {
             keyPressMatchesLetter(e.key);
             

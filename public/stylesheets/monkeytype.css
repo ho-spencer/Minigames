@@ -36,6 +36,13 @@ body {
 }
 
 /*
+    Color when user correctly types a letter
+*/
+.correctLetterColor {
+    color: #219EBC;
+}
+
+/*
     Start Button
         - margin left/right: center in page
         - margin top: space between button and keyboard dispaly

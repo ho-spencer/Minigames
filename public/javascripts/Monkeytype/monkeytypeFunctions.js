@@ -387,7 +387,7 @@ function releasedColor(code) {
 */
 function randomWordList(wordArr, numWords = 10) {
 
-    const randomWords = new Array(numWords - 1);
+    const randomWords = new Array(numWords);
     const wordListLength = wordArr.length - 1;
     
     for (let i = 0; i <= randomWords.length - 1; i++) {
@@ -400,27 +400,58 @@ function randomWordList(wordArr, numWords = 10) {
 
 /*
     Start Restart Game
-        Set inner text of span to display the generated words.
+        Set generated words to be displayed for the typing game.
 
         - generate words and set all the words into a single string (done in the function randomWordList())
         - create a character array from wordStr
-        - set innerText of the display span to be the single String (string is all the words)
+        - clear innerText of span to remove the starting message when start button is pressed
+
+        For each letter in the charArr:
+            - create span with class attribute
+            - set innerText to be the current letter
+            - append span to typeWords span
+        Each letter is in it's own span so that each individual letter can have it's color updated when
+        user types a matching/non-matching letter
+
         - game started: isGameStart = true
 */
 function startRestartGame() {
     wordStr = randomWordList(wordsList);      // STRING of all words generated
     charArr = [...wordStr];                   // char array of wordStr
-    typeWords.innerText = wordStr;
+    typeWords.innerText = "";                 // clear inner text (remove starting message)
+
+    for (let i = 0; i <= charArr.length - 1; i++) {
+        const letterSpan = document.createElement("span");              // create span
+        letterSpan.setAttribute("class", `letter${i}`);                 // set class of span
+        letterSpan.innerText = charArr[i];                              // set inner text to the current letter in the char array
+
+        typeWords.appendChild(letterSpan);
+    }
+
+    // console.log(typeWords.children);     // DEBUG
+
+
     isGameStart = true;
 }
 
 /*
     Key Press Matches Letter
         Function if a user's key press matches the current letter in the typing game
+
+        typeWordsChildren - collection of all child spans of typeWords
+            - each span is an individual letter from the generated words
+
+        - add class "correctLetterColor" to the current letter span to update the color
+            when user types the correct letter
+
+        - increase count for the number of correct letters typed
 */
 function keyPressMatchesLetter(key) {
+    const typeWordsChildren = typeWords.children;  
+    typeWordsChildren[charNum].classList.add("correctLetterColor");             // add class to update color for correct letter press
+    
     console.log(`charNum: ${charNum} | Letter: ${charArr[charNum]}`);           // DEBUG
-    console.log(`You pressed: ${key}`);                                         // DEBUG
+    console.log(`CORRECT MATCH -- You pressed: ${key}`);                        // DEBUG
 
     correctCount++;
 }
@@ -430,7 +461,7 @@ function keyPressMatchesLetter(key) {
 */
 function wrongKeyPress(key) {
     console.log(`charNum: ${charNum} | Letter: ${charArr[charNum]}`);           // DEBUG
-    console.log(`You pressed: ${key}`);                                         // DEBUG
+    console.log(`WRONG KEY -- You pressed: ${key}`);                            // DEBUG
 
     wrongcount++;
 }

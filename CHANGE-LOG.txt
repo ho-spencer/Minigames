@@ -1,4 +1,26 @@
 ======================================================================
+3/29/2024
+Create a span element for each letter
+======================================================================
+    Each letter in the generated words now has it's own span, so that when user is playing the typing game,
+    each letter can have it's color updated individually when a user types a correct/incorrect letter.
+
+    monkeytypeFunctions.js
+        - startRestartGame()
+            - added logic to create a new span for each letter in the char array
+            - each span is appended to the typeWords span (where generated words are displayed for the game)
+        - keyPressMatchesLetter()
+            - updated function so if a user types a correct letter, the span of that letter will change color
+                to indicate a correctly typed letter
+
+    monkeytype.js
+        - updated keydown event listener to prevent spacebar from "clicking" the start/restart button
+
+    monkeytype.css
+        - added styling for when a user correctly types a letter in the game
+
+
+======================================================================
 3/27/2024
 Key Press Matches Current Letter
 ======================================================================
