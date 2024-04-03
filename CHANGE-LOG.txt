@@ -1,4 +1,22 @@
 ======================================================================
+4/3/2024
+Percentage Score Display
+======================================================================
+    Added socre display.
+
+    monkeytype.ejs
+        - added a span to display the percentage score live while the game is being played
+            - score is based on total number of letters
+    
+    monkeytype.css
+        - styling for score display
+    
+    monkeytypeFunctions.js
+        - percentSupdatePercentScorecore()
+            - dispalys the percent of correct letters typed
+
+
+======================================================================
 3/29/2024
 Added color to letters for incorrectly typed letters
 ======================================================================

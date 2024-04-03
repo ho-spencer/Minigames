@@ -465,3 +465,15 @@ function wrongKeyPress(key) {
 
     wrongcount++;
 }
+
+/*
+    Update Percent Score
+        Function to update percent score display
+            
+            - current value is based on number of letters typed
+        
+*/
+function updatePercentScore() {
+    let percent = (correctCount / charsTyped) * 100;
+    percentScore.innerText = `${Math.floor(percent)}%`;
+}

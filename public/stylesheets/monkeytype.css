@@ -31,6 +31,26 @@ body {
     vertical-align: middle;
 }
 
+/*
+    Div containing 2 spans to display score
+        - centered on page
+*/
+.scoreDisplay {
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    font-size: 4rem;
+    color: #D3D3D3;
+}
+
+/*
+    First span in the score display
+        - margin to give spacing both fraction score and percentage score display
+*/
+#fractionScore {
+    margin-right: 12%;
+}
+
 .pressed-color {
     background-color: #84a59d;
 }

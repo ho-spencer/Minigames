@@ -52,6 +52,9 @@ const divM = document.querySelector("#keyM");
 // Variables for Row 5 divs
 const divSpace = document.querySelector("#space");
 
+// Variables for Score Display
+const percentScore = document.querySelector("#percentScore");
+
 let isGameStart = false;
 
 // Variables for generated words for the game
@@ -62,7 +65,9 @@ let charArr;                // char array of wordStr
 let charNum = 0;                                // iterator for char array
 let correctCount = 0;                           // count for number of correct letters typed
 let wrongcount = 0;                             // count for number of incorrect letters typed
+let charsTyped = 1;                             // count for number of characters typed
 const typeWordsChildren = typeWords.children;   // collection of the span elements of each letter inside the typeWords span
+
 
 // Event listener for start button
 startRestartButton.addEventListener("click", function(e) {    
@@ -86,7 +91,6 @@ window.addEventListener("keydown", function(e) {
         }
 
 
-
         if (e.key === charArr[charNum]) {
             keyPressMatchesLetter(e.key);
             
@@ -95,9 +99,11 @@ window.addEventListener("keydown", function(e) {
             wrongKeyPress(e.key);
         }
 
+        // update percent score display
+        updatePercentScore();
 
 
-        
+        // DEBUG
         if (charNum === charArr.length - 1) {
             console.log("END");
             console.log(`CORRECT LETTERS: ${correctCount}`);
@@ -106,6 +112,7 @@ window.addEventListener("keydown", function(e) {
     }
 
     charNum++;
+    charsTyped++;
 });
 
 
