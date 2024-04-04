@@ -194,6 +194,7 @@ function pressedColor(code) {
 */
 function releasedColor(code) {
     switch (code) {
+    /*
         // ROW 1
         case "Digit1": {
             div1.classList.remove("pressed-color");
@@ -239,6 +240,7 @@ function releasedColor(code) {
             divMinus.classList.remove("pressed-color");
             break;
         }
+    */
 
         // ROW 2
         case "KeyQ": {
@@ -416,9 +418,10 @@ function randomWordList(wordArr, numWords = 10) {
         - game started: isGameStart = true
 */
 function startRestartGame() {
-    wordStr = randomWordList(wordsList);      // STRING of all words generated
+    wordStr = randomWordList(wordsList, numWords);      // STRING of all words generated
     charArr = [...wordStr];                   // char array of wordStr
     typeWords.innerText = "";                 // clear inner text (remove starting message)
+    percentScore.innerText = "0%";            // set percentage score display
 
     for (let i = 0; i <= charArr.length - 1; i++) {
         const letterSpan = document.createElement("span");              // create span
@@ -476,4 +479,20 @@ function wrongKeyPress(key) {
 function updatePercentScore() {
     let percent = (correctCount / charsTyped) * 100;
     percentScore.innerText = `${Math.floor(percent)}%`;
+}
+
+
+/*
+    Update styling of mode selectors
+*/
+function numWordMode1Selected() {
+    numWords = 10;
+    numWordsMode1.classList.remove("unselectedMode");
+    numWordsMode2.classList.add("unselectedMode");
+}
+
+function numWordMode2Selected() {
+    numWords = 25;
+    numWordsMode1.classList.add("unselectedMode");
+    numWordsMode2.classList.remove("unselectedMode");
 }

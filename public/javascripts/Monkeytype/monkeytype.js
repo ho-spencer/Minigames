@@ -55,19 +55,23 @@ const divSpace = document.querySelector("#space");
 // Variables for Score Display
 const percentScore = document.querySelector("#percentScore");
 
+// Variables for Mode Selectors
+const numWordsMode1 = document.querySelector("#numWordsMode1");
+const numWordsMode2 = document.querySelector("#numWordsMode2");
+
 let isGameStart = false;
 
 // Variables for generated words for the game
+let numWords;               // number of words to generate
 let wordStr;                // single STRING of all words generated - "word1 word2 word3 word4"
 let charArr;                // char array of wordStr
 
 // Variables for game
-let charNum = 0;                                // iterator for char array
-let correctCount = 0;                           // count for number of correct letters typed
-let wrongcount = 0;                             // count for number of incorrect letters typed
-let charsTyped = 1;                             // count for number of characters typed
-const typeWordsChildren = typeWords.children;   // collection of the span elements of each letter inside the typeWords span
-
+let charNum = 0;                                        // iterator for char array
+let correctCount = 0;                                   // count for number of correct letters typed
+let wrongcount = 0;                                     // count for number of incorrect letters typed
+let charsTyped = 1;                                     // count for number of characters typed
+const typeWordsChildren = typeWords.children;           // collection of the span elements of each letter inside the typeWords span
 
 // Event listener for start button
 startRestartButton.addEventListener("click", function(e) {    
@@ -111,11 +115,20 @@ window.addEventListener("keydown", function(e) {
         }
     }
 
+    // Update Values
     charNum++;
     charsTyped++;
 });
 
-
+// Event listener for entire window to detect keyboard keyup
 window.addEventListener("keyup", function(e) {
     releasedColor(e.code);
 });
+
+numWordsMode1.addEventListener("click", function(e) {
+    numWordMode1Selected();
+})
+
+numWordsMode2.addEventListener("click", function(e) {
+    numWordMode2Selected();
+})

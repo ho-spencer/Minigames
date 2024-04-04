@@ -1,5 +1,23 @@
 ======================================================================
 4/3/2024
+Number of Words Selector
+======================================================================
+    Added mode selector options. Game based on number of words chosen.
+
+    monkeytype.ejs
+        - using divs to click to select the game mode
+    
+    monkeytype.js
+        - added event listeners for each selector div to pick the number of words
+            - 10 words and 25 word mode added
+        - clicking a mode will override the default value, 10
+    
+    monkeytypeFunctions.js
+        - added functions to update styling of mode selectors when clicked
+
+
+======================================================================
+4/3/2024
 Percentage Score Display
 ======================================================================
     Added socre display.

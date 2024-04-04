@@ -44,11 +44,35 @@ body {
 }
 
 /*
-    First span in the score display
-        - margin to give spacing both fraction score and percentage score display
+    Containing div for various game mode selectors
 */
-#fractionScore {
-    margin-right: 12%;
+.numWordsMode {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+/*
+    Div for different game mode settings
+*/
+.gameSetting {
+    background-color: #3f414d;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 2px;
+}
+
+.tenWords, .twentyFiveWords {
+    color: #FFFFFF;
+    vertical-align: middle;
+    font-weight: bolder;
+}
+
+
+.unselectedMode {
+    opacity: 50%;
 }
 
 .pressed-color {
