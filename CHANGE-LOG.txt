@@ -10,6 +10,8 @@ Number of Words Selector
     monkeytype.js
         - added event listeners for each selector div to pick the number of words
             - 10 words and 25 word mode added
+            - selecting a new mode before starting wont start the game
+            - selecting a new mode in the middle of a game will restart the game
         - clicking a mode will override the default value, 10
     
     monkeytypeFunctions.js

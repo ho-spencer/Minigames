@@ -97,7 +97,6 @@ window.addEventListener("keydown", function(e) {
 
         if (e.key === charArr[charNum]) {
             keyPressMatchesLetter(e.key);
-            
         }
         else {
             wrongKeyPress(e.key);
@@ -125,10 +124,25 @@ window.addEventListener("keyup", function(e) {
     releasedColor(e.code);
 });
 
+
+/*
+    Event Listener for mode type: number of words
+        - set value for number of words to generate
+        - restart game if a new mode is selected during a game
+*/
 numWordsMode1.addEventListener("click", function(e) {
     numWordMode1Selected();
+    
+    if (isGameStart) {
+        startRestartGame();
+    }
+    
 })
 
 numWordsMode2.addEventListener("click", function(e) {
     numWordMode2Selected();
+    
+    if (isGameStart) {
+        startRestartGame();
+    }
 })
