@@ -1,4 +1,15 @@
 ======================================================================
+4/5/2024
+Game Mode Button Styling
+======================================================================
+    Updated styling for game mode buttons
+
+    monkeytype.css
+        - centered span text in the center of the div
+        - moved buttons from center to rigth side
+
+
+======================================================================
 4/3/2024
 Number of Words Selector
 ======================================================================

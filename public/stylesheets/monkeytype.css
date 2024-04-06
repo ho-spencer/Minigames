@@ -45,47 +45,64 @@ body {
 
 /*
     Containing div for various game mode selectors
+
+        - Right justify the div
+            - width: 50%    (starts on left extends right up until 50% of page)
+            - margin-left: 50% ("push" div to right side of page)
 */
 .numWordsMode {
-    border: 1px solid black;
     display: flex;
-    justify-content: center;
+    margin-left: 50%;
+    width: 50%;
+    padding-left: 10%;
 }
 
 /*
     Div for different game mode settings
 */
 .gameSetting {
+    display: flex;                  /* use flexbox */
+    justify-content: center;        /* align span element in center of main (x) axis */
+
     background-color: #3f414d;
     height: 2rem;
     width: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    margin: 2px;
+    border-radius: 10px;            /* rounded courners */
+    margin: 2px;                    /* spac between each div (mode button) */
 }
 
+/*
+    Span that displays number for "number of words" mode button
+*/
 .tenWords, .twentyFiveWords {
+    font-size: small;
     color: #FFFFFF;
-    vertical-align: middle;
-    font-weight: bolder;
+    font-weight: bold;
+    align-self: center;             /* align text of span to be center of cross (y) axis */
 }
 
-
+/*
+    Styling to represent an unselected mode button (color is faded)
+*/
 .unselectedMode {
     opacity: 50%;
 }
 
+/*
+    Styling to show on keyboard display what key was pressed
+        - keys change color as user presses a key
+*/
 .pressed-color {
     background-color: #84a59d;
 }
 
-/* Color when user correctly / types a letter */
+/* Color of letter when user correctly / types a letter */
 .correctLetterColor {
     color: #219EBC;
 }
 
 
-/* Color when user types the wrong letter */
+/* Color of letter when user types the wrong letter */
 .wrongLetterColor {
     color: #F28482;
 }
