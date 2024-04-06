@@ -23,6 +23,13 @@ body {
 }
 
 /*
+    Space between game mode div and words display
+*/
+.numWordsMode {
+    margin-bottom: 3rem;
+}
+
+/*
     Letter / Number spans
         - vertial-align: align span innertext to vertical center
 */
