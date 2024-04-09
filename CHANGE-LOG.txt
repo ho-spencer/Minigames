@@ -1,4 +1,17 @@
 ======================================================================
+4/9/2024
+Update Styling
+======================================================================
+    Updated styling for text display
+
+    monkeytype.css
+        - width for the span that displays the text for the game smaller
+            - centered span in page
+        - added some margin on the bottom of the span to give space between the
+            keyboard display and text area
+
+
+======================================================================
 4/5/2024
 Game Mode Button Styling
 ======================================================================
