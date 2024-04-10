@@ -1,5 +1,28 @@
 ======================================================================
 4/9/2024
+Fix Reset Game Functionality & Add Cursor
+======================================================================
+    1. Updated start/reset button to reset the game if pressed during a game. Currently,
+        if reset is pressed during a game and a user starts typing again, it will continue
+        from the same index from before the button was pressed.
+        Ex: user types 5 letters, then presses reset
+            - the new game will start on letter/space #6 (not 0)
+
+    2. Add feature to have a "cursor" to show what letter needs to be typed next.
+        - cursor is just highlighing the letter (update background color of the letter span)
+
+    monkeytypeFunctions.js
+        - startRestartGame()
+            - added condition to reset game values if restart button is pressed mid-game
+        - cursorColor()
+            - highlight the next letter that needs to be pressed
+            - remove highlight on the current letter after it's pressed
+        - startRestartGame()
+            - added line to highlight the first letter when game starts or is restarted
+
+
+======================================================================
+4/9/2024
 Update Styling
 ======================================================================
     Updated styling for text display

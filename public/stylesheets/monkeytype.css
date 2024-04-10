@@ -114,6 +114,13 @@ body {
     color: #F28482;
 }
 
+/* 
+    Styling to highlight the current letter user needs to type
+*/
+.currentLetter {
+    background-color: rgba(255, 255, 0, 0.2);
+}
+
 
 /*
     Start Button

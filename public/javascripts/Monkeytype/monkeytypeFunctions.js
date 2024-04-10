@@ -419,10 +419,10 @@ function randomWordList(wordArr, numWords = 10) {
 */
 function startRestartGame() {
     wordStr = randomWordList(wordsList, numWords);      // STRING of all words generated
-    charArr = [...wordStr];                   // char array of wordStr
-    typeWords.innerText = "";                 // clear inner text (remove starting message)
-    percentScore.innerText = "0%";            // set percentage score display
-
+    charArr = [...wordStr];                             // char array of wordStr
+    typeWords.innerText = "";                           // clear inner text (remove starting message)
+    percentScore.innerText = "0%";                      // set percentage score display
+    
     for (let i = 0; i <= charArr.length - 1; i++) {
         const letterSpan = document.createElement("span");              // create span
         letterSpan.setAttribute("class", `letter${i}`);                 // set class of span
@@ -431,9 +431,15 @@ function startRestartGame() {
         typeWords.appendChild(letterSpan);
     }
 
-    // console.log(typeWords.children);     // DEBUG
+    // Reset button pressed in the middle of a game - reset all values for the game
+    if (isGameStart) {
+        charNum = 0;
+        correctCount = 0;
+        wrongcount = 0;
+        charsTyped = 1;
+    }
 
-
+    typeWordsChildren[charNum].classList.add("currentLetter");      // highlight first letter to show starting point
     isGameStart = true;
 }
 
@@ -495,4 +501,13 @@ function numWordMode2Selected() {
     numWords = 25;
     numWordsMode1.classList.add("unselectedMode");
     numWordsMode2.classList.remove("unselectedMode");
+}
+
+
+/*
+    Update stlyiing of text to represent a cursor
+*/
+function cursorColor() {
+    typeWordsChildren[charNum + 1].classList.add("currentLetter");            // add class to highlight next letter to type
+    typeWordsChildren[charNum].classList.remove("currentLetter");             // remove highlight after letter is pressed
 }

@@ -87,7 +87,11 @@ window.addEventListener("keydown", function(e) {
     // keys only work if game is started (isGameStart = true)
     if (isGameStart) {
         console.log(e);         // DEBUG
+        
         pressedColor(e.code);
+        updatePercentScore();   // update percent score display
+        cursorColor();          // update "cursor"
+        
         
         // Prevent space from pressing start/restart button
         if (e.target === startRestartButton) {
@@ -101,10 +105,6 @@ window.addEventListener("keydown", function(e) {
         else {
             wrongKeyPress(e.key);
         }
-
-        // update percent score display
-        updatePercentScore();
-
 
         // DEBUG
         if (charNum === charArr.length - 1) {
